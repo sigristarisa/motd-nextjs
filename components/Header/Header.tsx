@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { NavBtn } from "../../types/types";
 
-const Header = () => {
+interface Props {
+  headerText: string;
+  setHeaderText: Function;
+}
+
+const Header = ({ headerText, setHeaderText }: Props) => {
   const buttonArr: NavBtn[] = [
     {
       id: 0,
@@ -23,12 +28,13 @@ const Header = () => {
       <nav>
         <ul className='three-grid-columns place-items_center'>
           {buttonArr.map((btn: NavBtn, index: number) => (
-            <li key={index}>
+            <li key={index} onClick={() => setHeaderText(btn.headerText)}>
               <Link href={btn.navigate}>{btn.btnContent}</Link>
             </li>
           ))}
         </ul>
       </nav>
+      <h1>{headerText}</h1>
     </header>
   );
 };
