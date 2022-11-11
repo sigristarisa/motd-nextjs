@@ -1,7 +1,7 @@
-export type NavBtn = {
+export type NavItem = {
   id: number;
   navigate: string;
-  btnContent: string;
+  navContent: string;
   headerText: string | null;
 };
 

@@ -1,24 +1,25 @@
 import Link from "next/link";
-import { NavBtn } from "../../types/types";
+import { NavItem } from "../../types/types";
 import headerStyles from "./Header.module.css";
 
 interface Props {
   setHeaderText: Function;
+  getNavId: Function;
 }
 
-const Header = ({ setHeaderText }: Props) => {
-  const buttonArr: NavBtn[] = [
+const Header = ({ setHeaderText, getNavId }: Props) => {
+  const navArr: NavItem[] = [
     {
       id: 0,
       navigate: "/",
-      btnContent: "HOME",
+      navContent: "HOME",
       headerText: "Mayonnaise Of The Day",
     },
-    { id: 1, navigate: "/about", btnContent: "ABOUT", headerText: null },
+    { id: 1, navigate: "/about", navContent: "ABOUT", headerText: null },
     {
       id: 2,
       navigate: "/todays-mayonnaise",
-      btnContent: "TODAY",
+      navContent: "TODAY",
       headerText: "Your Mayonnaise Of The Day Is...",
     },
   ];
@@ -27,10 +28,10 @@ const Header = ({ setHeaderText }: Props) => {
     <header className={`${headerStyles.container} place-items_center`}>
       <nav>
         <ul className='three-grid-columns place-items_center'>
-          {buttonArr.map((btn: NavBtn, index: number) => (
-            <li key={index} onClick={() => setHeaderText(btn.headerText)}>
-              <Link className={headerStyles.navItem} href={btn.navigate}>
-                {btn.btnContent}
+          {navArr.map((nav: NavItem, index: number) => (
+            <li key={index} onClick={() => setHeaderText(nav.headerText)}>
+              <Link className={headerStyles.navItem} href={nav.navigate}>
+                {nav.navContent}
               </Link>
             </li>
           ))}
