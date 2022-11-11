@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { NavBtn } from "../../types/types";
+import headerStyles from "./Header.module.css";
 
 interface Props {
-  headerText: string;
   setHeaderText: Function;
 }
 
-const Header = ({ headerText, setHeaderText }: Props) => {
+const Header = ({ setHeaderText }: Props) => {
   const buttonArr: NavBtn[] = [
     {
       id: 0,
@@ -24,17 +24,18 @@ const Header = ({ headerText, setHeaderText }: Props) => {
   ];
 
   return (
-    <header className='place-items_center'>
+    <header className={`${headerStyles.container} place-items_center`}>
       <nav>
         <ul className='three-grid-columns place-items_center'>
           {buttonArr.map((btn: NavBtn, index: number) => (
             <li key={index} onClick={() => setHeaderText(btn.headerText)}>
-              <Link href={btn.navigate}>{btn.btnContent}</Link>
+              <Link className={headerStyles.navItem} href={btn.navigate}>
+                {btn.btnContent}
+              </Link>
             </li>
           ))}
         </ul>
       </nav>
-      <h1>{headerText}</h1>
     </header>
   );
 };
