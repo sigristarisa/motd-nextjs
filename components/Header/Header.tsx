@@ -32,16 +32,14 @@ const Header = ({ setHeaderText, getNavId, activateNav }: Props) => {
         <ul className='three-grid-columns place-items_center'>
           {navArr.map((nav: NavItem, index: number) => (
             <li
-              className={`${headerStyles.item} ${cn({
-                active: activateNav(index),
-              })}`}
+              className={cn({ [headerStyles.activeNav]: activateNav(index) })}
               key={index}
               onClick={() => {
                 setHeaderText(nav.headerText);
                 getNavId(nav.id);
               }}
             >
-              <Link className={headerStyles.navItem} href={nav.navigate}>
+              <Link className={headerStyles.navLink} href={nav.navigate}>
                 {nav.navContent}
               </Link>
             </li>
