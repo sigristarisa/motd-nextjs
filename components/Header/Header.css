@@ -11,9 +11,10 @@ header {
   text-decoration: none;
 }
 
-.inactive {
+.item {
   border-bottom: transparent 2px solid;
 }
+
 .active {
   border-bottom: var(--red-100) 2px solid;
 }
