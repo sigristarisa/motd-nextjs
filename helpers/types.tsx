@@ -25,3 +25,10 @@ export type Mayonnaise = {
   portion: string;
   combination: Combination[];
 };
+
+export type HeaderText = {
+  headerText: string;
+  setHeaderText: (headerText: string) => void;
+  getNavId: (navId: number) => void;
+  activateNav: (navId: number) => boolean;
+};

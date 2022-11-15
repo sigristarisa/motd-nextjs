@@ -1,6 +1,9 @@
+import Header from "../components/Header/Header";
+
 const About = () => {
   return (
     <div className='about-page_container place-items_center'>
+      <Header />
       <h2>
         By the Mayo-Lover,<br></br> For the Mayo-Lover, <br></br>Of the
         Mayo-Lover.

@@ -1,15 +1,12 @@
+import { useContext } from "react";
+import { headerContext } from "../../helpers/createContext";
 import Link from "next/link";
-import { NavItem } from "../../types/types";
+import { NavItem } from "../../helpers/types";
 import styles from "./Header.module.css";
 import cn from "classnames";
 
-interface Props {
-  setHeaderText: Function;
-  getNavId: Function;
-  activateNav: Function;
-}
-
-const Header = ({ setHeaderText, getNavId, activateNav }: Props) => {
+const Header = () => {
+  const { setHeaderText, getNavId, activateNav } = useContext(headerContext);
   const navArr: NavItem[] = [
     {
       id: 0,
@@ -35,7 +32,7 @@ const Header = ({ setHeaderText, getNavId, activateNav }: Props) => {
               className={cn({ [styles.header_activeNav]: activateNav(index) })}
               key={index}
               onClick={() => {
-                setHeaderText(nav.headerText);
+                setHeaderText(nav.headerText!);
                 getNavId(nav.id);
               }}
             >
