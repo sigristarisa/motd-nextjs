@@ -1,8 +1,9 @@
 import { useState } from "react";
+import Head from "next/head";
 import Header from "../components/Header/Header";
 import MainTitle from "../components/MainTitle/MainTitle";
-import Head from "next/head";
-import Image from "next/image";
+import Lid from "../components/Lid/Lid";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [navId, setNavId] = useState<number>(0);
@@ -13,10 +14,8 @@ export default function Home() {
     return navId === index;
   };
 
-  console.log(navId);
-
   return (
-    <div className='justify-items_center'>
+    <body className='justify-items_center'>
       <Head>
         <title>MOTD – Mayonnaise of the Day</title>
       </Head>
@@ -25,13 +24,10 @@ export default function Home() {
         getNavId={getNavId}
         activateNav={activateNav}
       />
-      <MainTitle headerText={headerText} />
-      <Image
-        src='/images/mayonnaise-lid.png'
-        width={900}
-        height={300}
-        alt='mayonnaise lid'
-      />
-    </div>
+      <main className={`${styles.main_container} place-items_center`}>
+        <MainTitle headerText={headerText} />
+        <Lid getNavId={getNavId} setHeaderText={setHeaderText} />
+      </main>
+    </body>
   );
 }

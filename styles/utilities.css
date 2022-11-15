@@ -31,10 +31,10 @@
   justify-items: center;
 }
 
-.justify-items_end {
+.align-items_end {
   display: grid;
-  justify-items: end;
-  align-items: center;
+  justify-items: center;
+  align-items: end;
 }
 
 .place-items_center {
