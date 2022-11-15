@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { NavItem } from "../../types/types";
-import headerStyles from "./Header.module.css";
+import styles from "./Header.module.css";
 import cn from "classnames";
 
 interface Props {
@@ -27,19 +27,19 @@ const Header = ({ setHeaderText, getNavId, activateNav }: Props) => {
   ];
 
   return (
-    <header className={`${headerStyles.container} place-items_center`}>
+    <header className={`${styles.header_container} place-items_center`}>
       <nav>
         <ul className='three-grid-columns place-items_center'>
           {navArr.map((nav: NavItem, index: number) => (
             <li
-              className={cn({ [headerStyles.activeNav]: activateNav(index) })}
+              className={cn({ [styles.header_activeNav]: activateNav(index) })}
               key={index}
               onClick={() => {
                 setHeaderText(nav.headerText);
                 getNavId(nav.id);
               }}
             >
-              <Link className={headerStyles.navLink} href={nav.navigate}>
+              <Link className={styles.header_navLink} href={nav.navigate}>
                 {nav.navContent}
               </Link>
             </li>

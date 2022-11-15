@@ -1,0 +1,20 @@
+.mainTitle_container {
+  width: 100vw;
+  height: 30vh;
+  color: var(--red-100);
+  background-color: var(--cream-60);
+}
+
+.mainTitle_container h1 {
+  height: 24vh;
+  margin: 0;
+  font-family: "Righteous", cursive;
+  font-size: var(--font-xl);
+  letter-spacing: 0.05em;
+}
+
+.mainTitle_container h2 {
+  margin: 0;
+  font-family: "Comfortaa", cursive;
+  font-size: var(--font-l);
+}

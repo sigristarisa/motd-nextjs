@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "../components/Header/Header";
+import MainTitle from "../components/MainTitle/MainTitle";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -24,7 +25,7 @@ export default function Home() {
         getNavId={getNavId}
         activateNav={activateNav}
       />
-      <p>{headerText}</p>
+      <MainTitle headerText={headerText} />
       <Image
         src='/images/mayonnaise-lid.png'
         width={900}
