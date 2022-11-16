@@ -1,13 +1,8 @@
 .about_container {
-  width: 100vw;
-  height: 60vh;
+  height: 45vh;
   color: var(--red-100);
   background-color: var(--cream-60);
   font-family: "Comfortaa", cursive;
-}
-
-.about_container h2 {
-  line-height: 1.5em;
 }
 
 .about_text_container {

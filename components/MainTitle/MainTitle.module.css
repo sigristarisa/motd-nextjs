@@ -1,6 +1,6 @@
 .mainTitle_container {
   width: 100vw;
-  height: 30vh;
+  height: 45vh;
   color: var(--red-100);
   background-color: var(--cream-60);
 }
@@ -14,6 +14,7 @@
 }
 
 .mainTitle_container h2 {
+  height: 100%;
   margin: 0;
   font-family: "Comfortaa", cursive;
   font-size: var(--font-l);
