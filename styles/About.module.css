@@ -15,14 +15,15 @@
   margin-bottom: var(--font-s);
 }
 
-.creator_text {
+.creator_text_container {
+  height: 10vh;
   font-size: var(--font-xs);
 }
 
-.creator_text a {
+.creator_text_container a {
   color: var(--red-100);
 }
 
-.creator_text a:hover {
+.creator_text_container a:hover {
   color: var(--red-60);
 }

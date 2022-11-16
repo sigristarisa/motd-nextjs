@@ -6,20 +6,18 @@ import styles from "./Header.module.css";
 import cn from "classnames";
 
 const Header = () => {
-  const { setHeaderText, getNavId, activateNav } = useContext(headerContext);
+  const { getNavId, activateNav } = useContext(headerContext);
   const navArr: NavItem[] = [
     {
       id: 0,
       navigate: "/",
       navContent: "HOME",
-      headerText: "Mayonnaise Of The Day",
     },
-    { id: 1, navigate: "/about", navContent: "ABOUT", headerText: null },
+    { id: 1, navigate: "/about", navContent: "ABOUT" },
     {
       id: 2,
       navigate: "/todays-mayonnaise",
       navContent: "TODAY",
-      headerText: "Your Mayonnaise Of The Day Is...",
     },
   ];
 
@@ -31,10 +29,7 @@ const Header = () => {
             <li
               className={cn({ [styles.header_activeNav]: activateNav(index) })}
               key={index}
-              onClick={() => {
-                setHeaderText(nav.headerText!);
-                getNavId(nav.id);
-              }}
+              onClick={() => getNavId(nav.id)}
             >
               <Link className={styles.header_navLink} href={nav.navigate}>
                 {nav.navContent}

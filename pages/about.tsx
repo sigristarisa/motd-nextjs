@@ -28,9 +28,11 @@ const About = () => {
             prevent your mayo-addiction.
           </p>
         </div>
-        <p className={`${styles.creator_text}`}>
-          creator: <a href='https://github.com/sigristarisa'>Arisa Sigrist</a>
-        </p>
+        <div className={`${styles.creator_text_container} align-items_end`}>
+          <p>
+            creator: <a href='https://github.com/sigristarisa'>Arisa Sigrist</a>
+          </p>
+        </div>
       </main>
     </div>
   );

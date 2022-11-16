@@ -6,14 +6,13 @@ import OutsideClickHandler from "react-outside-click-handler";
 import styles from "./Lid.module.css";
 
 const Lid = () => {
-  const { setHeaderText, getNavId } = useContext(headerContext);
+  const { getNavId } = useContext(headerContext);
 
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const router = useRouter();
   const moveToRandomizer = (): void => {
     setIsClicked(false);
     getNavId(2);
-    setHeaderText("Your Mayonnaise Of The Day Is...");
     router.push("/todays-mayonnaise");
   };
   return (

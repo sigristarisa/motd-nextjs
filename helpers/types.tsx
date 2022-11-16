@@ -2,7 +2,6 @@ export type NavItem = {
   id: number;
   navigate: string;
   navContent: string;
-  headerText: string | null;
 };
 
 type Dish = {
@@ -27,8 +26,6 @@ export type Mayonnaise = {
 };
 
 export type HeaderText = {
-  headerText: string;
-  setHeaderText: (headerText: string) => void;
   getNavId: (navId: number) => void;
   activateNav: (navId: number) => boolean;
 };
