@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Header from "../components/Header/Header";
 import MainTitle from "../components/MainTitle/MainTitle";
@@ -12,6 +12,9 @@ export default function Home() {
 
   const getNavId = (btnId: number): void => setNavId(btnId);
   const activateNav = (index: number): boolean => {
+    console.log("navId", navId);
+    console.log("index", index);
+    console.log(navId === index);
     return navId === index;
   };
 
@@ -19,7 +22,7 @@ export default function Home() {
     <headerContext.Provider
       value={{ headerText, setHeaderText, getNavId, activateNav }}
     >
-      <body className='justify-items_center'>
+      <div className='justify-items_center'>
         <Head>
           <title>MOTD – Mayonnaise of the Day</title>
         </Head>
@@ -28,7 +31,7 @@ export default function Home() {
           <MainTitle headerText={headerText} />
           <Lid />
         </main>
-      </body>
+      </div>
     </headerContext.Provider>
   );
 }

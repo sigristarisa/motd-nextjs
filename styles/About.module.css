@@ -1,0 +1,33 @@
+.about_container {
+  width: 100vw;
+  height: 60vh;
+  color: var(--red-100);
+  background-color: var(--cream-60);
+  font-family: "Comfortaa", cursive;
+}
+
+.about_container h2 {
+  line-height: 1.5em;
+}
+
+.about_text_container {
+  width: 80vw;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.about_text_container p {
+  margin-bottom: var(--font-s);
+}
+
+.creator_text {
+  font-size: var(--font-xs);
+}
+
+.creator_text a {
+  color: var(--red-100);
+}
+
+.creator_text a:hover {
+  color: var(--red-60);
+}

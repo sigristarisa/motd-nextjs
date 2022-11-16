@@ -1,14 +1,17 @@
 import Header from "../components/Header/Header";
+import MainTitle from "../components/MainTitle/MainTitle";
+import styles from "../styles/About.module.css";
 
 const About = () => {
   return (
-    <div className='about-page_container place-items_center'>
+    <div className={`${styles.about_container} place-items_center`}>
       <Header />
+      <MainTitle headerText={""} />
       <h2>
         By the Mayo-Lover,<br></br> For the Mayo-Lover, <br></br>Of the
         Mayo-Lover.
       </h2>
-      <div className='about-page-text_container'>
+      <div className={`${styles.about_text_container}`}>
         <p>
           You might go along with a little bit of mayonnaise on toast,<br></br>{" "}
           but are you ready for mayonnaise on your rice,<br></br> your steamed
@@ -24,7 +27,7 @@ const About = () => {
           prevent your mayo-addiction.
         </p>
       </div>
-      <p className='creator-text'>
+      <p className={`${styles.creator_text}`}>
         creator: <a href='https://github.com/sigristarisa'>Arisa Sigrist</a>
       </p>
     </div>

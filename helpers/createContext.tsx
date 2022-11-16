@@ -7,5 +7,3 @@ export const headerContext = createContext<HeaderText>({
   getNavId: () => {},
   activateNav: () => false,
 });
-
-export const raisedBedContext = createContext({});
