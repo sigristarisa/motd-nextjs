@@ -1,0 +1,4 @@
+.ingredients_container p {
+  margin: var(--font-xxs);
+  font-size: var(--font-m);
+}

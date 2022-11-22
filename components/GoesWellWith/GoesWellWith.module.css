@@ -1,0 +1,9 @@
+.goesWellWith_container {
+  font-size: var(--font-m);
+}
+
+.dishIcon_container {
+  width: 40px;
+  height: 40px;
+  padding-right: 2px;
+}
