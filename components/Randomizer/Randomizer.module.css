@@ -1,0 +1,20 @@
+.randomizer_container {
+  width: 100vw;
+  height: 60vh;
+  color: var(--red-100);
+  background-color: var(--cream-60);
+}
+
+.mayonnaiseText_container,
+.spacing_container {
+  width: 80vw;
+  height: 20vh;
+  font-family: "Comfortaa", cursive;
+}
+
+.mayonnaiseText_container h2 {
+  width: 100%;
+  margin: 0;
+  font-size: var(--font-l);
+  font-weight: 700;
+}

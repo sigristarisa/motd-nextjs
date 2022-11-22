@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import "./Randomizer.css";
 
 const ImageSlideShow = () => {
   const [mayoImgId, setMayoImgId] = useState<number>(1);

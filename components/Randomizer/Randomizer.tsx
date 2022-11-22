@@ -5,59 +5,62 @@ import GoesWellWith from "../GoesWellWith/GoesWellWith";
 // import client from "../../helpers/client";
 import Image from "next/image";
 import { Mayonnaise } from "../../helpers/types";
-import "./Randomizer.css";
+import styles from "./Randomizer.module.css";
 
-interface Props {
-  uuid: string;
-  cache: {
-    put: Function;
-  };
-}
+// interface Props {
+//   uuid: string;
+//   cache: {
+//     put: Function;
+//   };
+// }
 
-const Randomizer = ({ uuid, cache }: Props) => {
+const Randomizer = () => {
   const getRandomMayoId = (): number => {
     const maxMayoId = 100;
     const minMayoId = 1;
     const randomMayoId: number = Math.floor(
       Math.random() * (maxMayoId - minMayoId) + minMayoId
     );
-
     return randomMayoId;
   };
-
   const [mayoId] = useState<number>(getRandomMayoId());
   const [showMayonnaise, setShowMayonnaise] = useState<boolean>(false);
   const [mayonnaise, setMayonnaise] = useState<Mayonnaise>();
+  console.log(mayonnaise);
+
+  const getServerSideProps = async (mayoId: number) => {
+    fetch(`http://localhost:4000/mayonnaise/${mayoId}`)
+      .then((res) => res.json())
+      .then((mayo) => setMayonnaise(mayo.data));
+  };
 
   useEffect(() => {
-    cache.put(`uuid ${uuid}`, uuid, 86400000);
+    // cache.put(`uuid ${uuid}`, uuid, 86400000);
 
     setTimeout(() => setShowMayonnaise(true), 3200);
-    setTimeout(() => {
-      client.get(`/mayonnaise/${mayoId}`).then((res) => {
-        setMayonnaise(res.data.data);
-      });
-    }, 4000);
+    setTimeout(() => getServerSideProps(mayoId), 4000);
   }, []);
 
   return (
-    <div className='randomizer_container place-items_center'>
+    <div className={`${styles.randomizer_container} place-items_center`}>
       {mayonnaise && showMayonnaise ? (
-        <div className='mayonnaise-img_container place-items_center'>
-          <Image
-            src={`/public/mayo-image/image_mayonnaise${mayoId}.png`}
-            alt={`${mayonnaise.name}`}
-            className='mayonnaise_img'
-          />
-        </div>
+        <Image
+          src={`/mayo-image/image_mayonnaise${mayoId}.png`}
+          width={240}
+          height={240}
+          alt={`${mayonnaise.name}`}
+          className='place-items_center'
+        />
       ) : (
         <ImageSlideShow />
       )}
 
       {mayonnaise ? (
-        <div className='mayonnaise-text_container four-grid-columns_custom place-items_center'>
+        <div
+          className={`${styles.mayonnaiseText_container} four-grid-columns_custom place-items_center`}
+        >
           <h2 className='justify-items_end'>{mayonnaise.name.toUpperCase()}</h2>
-          <div className='spoon_container justify-items_end'>
+          <div className='justify-items_end'>
             <Image
               src='/images/spoon.png'
               width={60}
