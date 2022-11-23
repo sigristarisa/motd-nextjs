@@ -25,8 +25,9 @@ const Layout = ({ children, page }: Children) => {
   return (
     <div>
       <Head>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/images/cooking_mayonnaise_kakeru.png' />
         <meta name='description' content='Get your mayonnaise of the day!' />
+        <title>{`MOTD ${page}`}</title>
       </Head>
       <Header page={page} />
       <main className='justify-items_center'>
