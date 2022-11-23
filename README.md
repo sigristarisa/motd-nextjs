@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">🍳🥚🍳MOTD🥚🍳🥚</h1>
+<h2 align="center">Mayonnaise Of The Day (Next.js Edition)</h2>
 
-## Getting Started
+### Backstory
+Mayonnaise took over Japan's nation back in the late 90's. Even a term <i>"Mayoler"</i> was born to describe a growing obsession with this condiment by Japanese, particularly among the younger generation.<br>
+Fastfoward to 2022 – <i>"Mayoler"</i> is now a commonly used expression, and from my observation, the popularity does not remain within Japan.
 
-First, run the development server:
+To showcase the potential of mayonnaise, MOTD - Mayonnaise Of The Day - was created by the Mayo-Lover, for the Mayo-Lover, of the Mayo-Lover.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Demo
+![MOTD demo gif](https://github.com/sigristarisa/motd-nextjs/public/images/motd-demo.gif?raw=true)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### What Does the App Do?
+1. Users can get their mayonnaise of the day by a randomizer – out of 100 variations!
+2. Users can see the recipe of the mayonnaise
+3. Users can get what type of dish would go well with their mayonnaise of the day
 
-## Learn More
+### What Language is Used?
+**Frontend**
+- Next.js with Typescript
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Backend** 
+- Express with Typescript
+- Prisma
+- PostgreSQL<br/>
+ 
+=> *backend repository is found [here](https://github.com/sigristarisa/motd-server)*
