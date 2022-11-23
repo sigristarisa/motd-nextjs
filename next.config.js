@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  env: {
-    BASE_URL: process.env.NEXT_PUBLIC_API_URL,
-  },
+  // env: {
+  //   BASE_URL: process.env.NEXT_PUBLIC_API_URL,
+  // },
 };
 
 module.exports = nextConfig;
