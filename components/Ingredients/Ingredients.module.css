@@ -1,6 +1,5 @@
 .ingredients_container {
   width: 100%;
   height: 50%;
-  margin: var(--font-xxs);
   font-size: var(--font-m);
 }

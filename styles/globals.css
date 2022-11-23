@@ -19,6 +19,9 @@ header {
 main {
   width: 100vw;
   height: 90vh;
+  color: var(--red-100);
+  background-color: var(--cream-60);
+  font-family: "Comfortaa", cursive;
 }
 
 button {

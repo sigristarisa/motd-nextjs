@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import ImageSlideShow from "../ImageSlideShow/ImageSlideShow";
 import Ingredients from "../Ingredients/Ingredients";
 import GoesWellWith from "../GoesWellWith/GoesWellWith";
-// import client from "../../helpers/client";
 import Image from "next/image";
 import { Mayonnaise } from "../../helpers/types";
 import styles from "./Randomizer.module.css";
@@ -28,7 +27,7 @@ const Randomizer = () => {
   const [mayonnaise, setMayonnaise] = useState<Mayonnaise>();
 
   const getServerSideProps = async (mayoId: number) => {
-    fetch(`http://localhost:4000/mayonnaise/${mayoId}`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/mayonnaise/${mayoId}`)
       .then((res) => res.json())
       .then((mayo) => setMayonnaise(mayo.data));
   };
@@ -73,7 +72,7 @@ const Randomizer = () => {
           <GoesWellWith mayonnaise={mayonnaise} />
         </div>
       ) : (
-        <div className='spacing_container'></div>
+        <div className={styles.spacing_container}></div>
       )}
     </div>
   );

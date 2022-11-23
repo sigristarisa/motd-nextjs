@@ -4,7 +4,7 @@ import styles from "../styles/About.module.css";
 const About = () => {
   return (
     <Layout page='about'>
-      <div className={`${styles.about_text_container}`}>
+      <div className={`${styles.about_text_container} place-items_center`}>
         <p>
           You might go along with a little bit of mayonnaise on toast,
           <br></br> but are you ready for mayonnaise on your rice,<br></br> your
