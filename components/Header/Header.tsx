@@ -5,8 +5,14 @@ import { NavItem } from "../../helpers/types";
 import styles from "./Header.module.css";
 import cn from "classnames";
 
-const Header = () => {
-  const { getNavId, activateNav } = useContext(headerContext);
+interface Props {
+  page: string;
+}
+
+const Header = ({ page }: Props) => {
+  const activateNav = (navigate: string): boolean => navigate === `/${page}`;
+
+  // const { getNavId, activateNav } = useContext(headerContext);
   const navArr: NavItem[] = [
     {
       id: 0,
@@ -22,14 +28,15 @@ const Header = () => {
   ];
 
   return (
-    <header className={`${styles.header_container} place-items_center`}>
+    <header className='place-items_center'>
       <nav>
         <ul className='three-grid-columns place-items_center'>
           {navArr.map((nav: NavItem, index: number) => (
             <li
-              className={cn({ [styles.header_activeNav]: activateNav(index) })}
+              className={cn({
+                [styles.header_activeNav]: activateNav(nav.navigate),
+              })}
               key={index}
-              onClick={() => getNavId(nav.id)}
             >
               <Link className={styles.header_navLink} href={nav.navigate}>
                 {nav.navContent}

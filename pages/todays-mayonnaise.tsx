@@ -1,16 +1,11 @@
-import Header from "../components/Header/Header";
-import MainTitle from "../components/MainTitle/MainTitle";
+import Layout from "../components/Layout/Layout";
 import Randomizer from "../components/Randomizer/Randomizer";
 
 const todaysMayonnaise = () => {
   return (
-    <div>
-      <Header />
-      <main>
-        <MainTitle headerText={"Your Mayonnaise of the Day is..."} />
-        <Randomizer />
-      </main>
-    </div>
+    <Layout page='todays-mayonnaise'>
+      <Randomizer />
+    </Layout>
   );
 };
 

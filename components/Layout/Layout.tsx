@@ -10,7 +10,7 @@ interface Children {
 const Layout = ({ children, page }: Children) => {
   const setHeaderText = (page: string): string => {
     switch (page) {
-      case "home":
+      case "":
         return "Mayonnaise of the Day";
       case "about":
         return "By the Mayo-Lover, For the Mayo-Lover, Of the Mayo-Lover";
@@ -28,7 +28,7 @@ const Layout = ({ children, page }: Children) => {
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Get your mayonnaise of the day!' />
       </Head>
-      <Header />
+      <Header page={page} />
       <main className='justify-items_center'>
         <MainTitle headerText={setHeaderText(page)} />
         {children}

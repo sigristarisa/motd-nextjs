@@ -10,6 +10,17 @@ body {
   background-color: var(--cream-60);
 }
 
+header {
+  width: 100vw;
+  height: 10vh;
+  background-color: var(--cream-60);
+}
+
+main {
+  width: 100vw;
+  height: 90vh;
+}
+
 button {
   cursor: pointer;
 }
