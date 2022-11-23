@@ -26,7 +26,7 @@ const Randomizer = () => {
   const [showMayonnaise, setShowMayonnaise] = useState<boolean>(false);
   const [mayonnaise, setMayonnaise] = useState<Mayonnaise>();
 
-  const getStaticProps = async (mayoId: number) => {
+  const getServerSideProps = async (mayoId: number) => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/mayonnaise/${mayoId}`)
       .then((res) => res.json())
       .then((mayo) => setMayonnaise(mayo.data));
@@ -36,7 +36,7 @@ const Randomizer = () => {
     // cache.put(`uuid ${uuid}`, uuid, 86400000);
 
     setTimeout(() => setShowMayonnaise(true), 3200);
-    setTimeout(() => getStaticProps(mayoId), 4000);
+    setTimeout(() => getServerSideProps(mayoId), 4000);
   }, []);
 
   return (
