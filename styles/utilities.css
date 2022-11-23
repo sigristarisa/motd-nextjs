@@ -31,6 +31,11 @@
   justify-items: center;
 }
 
+.justify-items_end {
+  display: grid;
+  justify-items: end;
+}
+
 .align-items_end {
   display: grid;
   justify-items: center;

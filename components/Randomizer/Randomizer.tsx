@@ -58,12 +58,14 @@ const Randomizer = () => {
         <div
           className={`${styles.mayonnaiseText_container} four-grid-columns_custom place-items_center`}
         >
-          <h2 className='justify-items_end'>{mayonnaise.name.toUpperCase()}</h2>
-          <div className='justify-items_end'>
+          <h2 className='place-items_center'>
+            {mayonnaise.name.toUpperCase()}
+          </h2>
+          <div>
             <Image
               src='/images/spoon.png'
-              width={60}
-              height={60}
+              width={16}
+              height={50}
               alt='spoon icon'
             />
           </div>

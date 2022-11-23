@@ -12,7 +12,7 @@ const GoesWellWith = ({ mayonnaise }: Props) => {
       className={`${styles.goesWellWith_container} two-grid-columns_expand-two justify-items_start`}
     >
       <p>Goes well with</p>
-      <ul className='seven-grid-columns icon_container'>
+      <ul className={`seven-grid-columns ${styles.icon_container}`}>
         {mayonnaise.combination.map((combination, index) => {
           return (
             <li key={index} className={styles.dishIcon_container}>
