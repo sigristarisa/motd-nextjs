@@ -26,7 +26,6 @@ const Randomizer = () => {
   const [mayoId] = useState<number>(getRandomMayoId());
   const [showMayonnaise, setShowMayonnaise] = useState<boolean>(false);
   const [mayonnaise, setMayonnaise] = useState<Mayonnaise>();
-  console.log(mayonnaise);
 
   const getServerSideProps = async (mayoId: number) => {
     fetch(`http://localhost:4000/mayonnaise/${mayoId}`)

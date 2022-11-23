@@ -7,8 +7,6 @@ interface Props {
 }
 
 const GoesWellWith = ({ mayonnaise }: Props) => {
-  const host = process.env.REACT_APP_API_URL;
-
   return (
     <div
       className={`${styles.goesWellWith_container} two-grid-columns_expand-two justify-items_start`}
@@ -19,7 +17,7 @@ const GoesWellWith = ({ mayonnaise }: Props) => {
           return (
             <li key={index} className={styles.dishIcon_container}>
               <Image
-                src={`${host}${combination.dish.image}`}
+                src={`/dish-image/${combination.dish.name}.png`}
                 width={40}
                 height={40}
                 alt={`${combination.dish.name} icon`}

@@ -25,7 +25,7 @@ const ImageSlideShow = () => {
   return (
     <div className='place-items_center'>
       <Image
-        src={`/images/mayo-image/image_mayonnaise${mayoImgId}.png`}
+        src={`/mayo-image/image_mayonnaise${mayoImgId}.png`}
         width={240}
         height={240}
         alt='mayo img'
