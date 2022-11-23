@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import MainTitle from "../MainTitle/MainTitle";
 
 interface Children {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
   page: string;
 }
 
