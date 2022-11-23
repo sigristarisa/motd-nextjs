@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { headerContext } from "../../helpers/createContext";
 import Link from "next/link";
 import { NavItem } from "../../helpers/types";
 import styles from "./Header.module.css";
@@ -11,8 +9,6 @@ interface Props {
 
 const Header = ({ page }: Props) => {
   const activateNav = (navigate: string): boolean => navigate === `/${page}`;
-
-  // const { getNavId, activateNav } = useContext(headerContext);
   const navArr: NavItem[] = [
     {
       id: 0,

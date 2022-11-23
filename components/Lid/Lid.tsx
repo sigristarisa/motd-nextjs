@@ -1,18 +1,14 @@
-import { useState, useContext } from "react";
-import { headerContext } from "../../helpers/createContext";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import OutsideClickHandler from "react-outside-click-handler";
 import styles from "./Lid.module.css";
 
 const Lid = () => {
-  const { getNavId } = useContext(headerContext);
-
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const router = useRouter();
   const moveToRandomizer = (): void => {
     setIsClicked(false);
-    getNavId(2);
     router.push("/todays-mayonnaise");
   };
   return (
