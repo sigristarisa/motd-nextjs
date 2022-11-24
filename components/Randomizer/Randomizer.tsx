@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import useSWR, { Fetcher } from "swr";
 import ImageSlideShow from "../ImageSlideShow/ImageSlideShow";
 import Ingredients from "../Ingredients/Ingredients";
 import GoesWellWith from "../GoesWellWith/GoesWellWith";
@@ -6,12 +7,7 @@ import Image from "next/image";
 import { Mayonnaise } from "../../helpers/types";
 import styles from "./Randomizer.module.css";
 
-// interface Props {
-//   uuid: string;
-//   cache: {
-//     put: Function;
-//   };
-// }
+const fetcher = (apiURL: string) => fetch(apiURL).then((res) => res.json());
 
 const Randomizer = () => {
   const getRandomMayoId = (): number => {
@@ -26,17 +22,14 @@ const Randomizer = () => {
   const [showMayonnaise, setShowMayonnaise] = useState<boolean>(false);
   const [mayonnaise, setMayonnaise] = useState<Mayonnaise>();
 
-  const getServerSideProps = async (mayoId: number) => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/mayonnaise/${mayoId}`)
-      .then((res) => res.json())
-      .then((mayo) => setMayonnaise(mayo.data));
-  };
+  const { data } = useSWR<Mayonnaise, Error>(
+    `/api/mayonnaise/${mayoId}`,
+    fetcher
+  );
 
   useEffect(() => {
-    // cache.put(`uuid ${uuid}`, uuid, 86400000);
-
     setTimeout(() => setShowMayonnaise(true), 3200);
-    setTimeout(() => getServerSideProps(mayoId), 4000);
+    setTimeout(() => setMayonnaise(data), 4000);
   }, []);
 
   return (
