@@ -1,3 +1,4 @@
+// for client
 export type NavItem = {
   id: number;
   navigate: string;
@@ -22,7 +23,7 @@ export type Mayonnaise = {
   name: string;
   ingredient: string;
   portion: string;
-  combination?: Combination[];
+  combination: Combination[];
 };
 
 export type HeaderText = {
@@ -30,6 +31,7 @@ export type HeaderText = {
   activateNav: (navId: number) => boolean;
 };
 
+// for seeding
 export type MayonnaiseSeed = {
   name: string;
   ingredient: string;
@@ -44,4 +46,9 @@ export type DishSeed = {
 export type CombinationSeed = {
   mayonnaiseId: number;
   dishId: number;
+};
+
+// for API
+export type Data = {
+  name: string;
 };

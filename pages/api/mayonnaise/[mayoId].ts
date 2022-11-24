@@ -1,21 +1,18 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { Mayo } from "../../../helpers/mayonnaiseModel";
+import { Data } from "../../../helpers/types";
 import type { NextApiRequest, NextApiResponse } from "next";
 import {
   sendDataResponse,
   sendMessageResponse,
 } from "../../../helpers/responses";
 
-type Data = {
-  name: string;
-};
-
-export default function handler(
+export const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<Data>
-) {
+) => {
   const { mayoId } = req.query;
   try {
-    const foundMayonnaise = await Mayonnaise.findById(mayoId);
+    const foundMayonnaise = await Mayo.findById(+mayoId!);
 
     if (!foundMayonnaise) {
       return sendDataResponse(res, 404, { id: "mayonnaise not found" });
@@ -26,6 +23,4 @@ export default function handler(
     console.error("What happened?: ", error.message);
     return sendMessageResponse(res, 500, "Unable to send mayonnaise");
   }
-
-  // res.status(200).json({ name: "John Doe" });
-}
+};
