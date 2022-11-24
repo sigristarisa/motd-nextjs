@@ -4,13 +4,13 @@ export type NavItem = {
   navContent: string;
 };
 
-type Dish = {
+export type Dish = {
   id: number;
   name: string;
   image: string;
 };
 
-type Combination = {
+export type Combination = {
   id: number;
   mayonnaiseId: number;
   dishId: number;
@@ -22,10 +22,26 @@ export type Mayonnaise = {
   name: string;
   ingredient: string;
   portion: string;
-  combination: Combination[];
+  combination?: Combination[];
 };
 
 export type HeaderText = {
   getNavId: (navId: number) => void;
   activateNav: (navId: number) => boolean;
+};
+
+export type MayonnaiseSeed = {
+  name: string;
+  ingredient: string;
+  portion: string;
+};
+
+export type DishSeed = {
+  name: string;
+  image: string;
+};
+
+export type CombinationSeed = {
+  mayonnaiseId: number;
+  dishId: number;
 };
