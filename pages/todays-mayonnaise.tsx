@@ -1,3 +1,4 @@
+import { InferGetStaticPropsType } from "next";
 import Layout from "../components/Layout/Layout";
 import Randomizer from "../components/Randomizer/Randomizer";
 

@@ -26,11 +26,6 @@ export type Mayonnaise = {
   combination: Combination[];
 };
 
-export type HeaderText = {
-  getNavId: (navId: number) => void;
-  activateNav: (navId: number) => boolean;
-};
-
 // for seeding
 export type MayonnaiseSeed = {
   name: string;

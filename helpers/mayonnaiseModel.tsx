@@ -2,7 +2,7 @@ import prisma from "@prisma/client";
 import { Mayonnaise } from "./types";
 const dbClient = new prisma.PrismaClient();
 
-export class Mayo {
+export default class Mayo {
   id: number;
   name: string;
   ingredient: string;
@@ -23,7 +23,7 @@ export class Mayo {
     this.combination = combination;
   }
 
-  static async fromClient(json: Mayonnaise) {
+  static fromClient(json: Mayonnaise) {
     const { id } = json;
     return new Mayo(+id, "", "", "", []);
   }
@@ -38,7 +38,7 @@ export class Mayo {
     );
   }
 
-  static async findById(id: number) {
+  static async findById(id: number): Promise<Mayonnaise | null> {
     const foundMayonnaise: Mayonnaise | null =
       await dbClient.mayonnaise.findFirst({
         where: { id },
@@ -51,9 +51,6 @@ export class Mayo {
         },
       });
 
-    if (foundMayonnaise) {
-      return Mayo.fromDb(foundMayonnaise);
-    }
-    return null;
+    return foundMayonnaise ? foundMayonnaise : null;
   }
 }

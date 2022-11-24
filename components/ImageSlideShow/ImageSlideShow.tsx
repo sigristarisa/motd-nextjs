@@ -10,7 +10,6 @@ const ImageSlideShow = () => {
     const randomMayoId: number = Math.floor(
       Math.random() * (maxMayoId - minMayoId) + minMayoId
     );
-
     setMayoImgId(randomMayoId);
   };
 

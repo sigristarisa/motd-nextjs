@@ -1,4 +1,4 @@
-import { Mayo } from "../../../helpers/mayonnaiseModel";
+import Mayo from "../../../helpers/mayonnaiseModel";
 import { Data } from "../../../helpers/types";
 import type { NextApiRequest, NextApiResponse } from "next";
 import {
@@ -6,10 +6,7 @@ import {
   sendMessageResponse,
 } from "../../../helpers/responses";
 
-export const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { mayoId } = req.query;
   try {
     const foundMayonnaise = await Mayo.findById(+mayoId!);
@@ -24,3 +21,5 @@ export const handler = async (
     return sendMessageResponse(res, 500, "Unable to send mayonnaise");
   }
 };
+
+export default handler;
