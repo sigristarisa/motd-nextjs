@@ -18,13 +18,7 @@ To showcase the potential of mayonnaise, MOTD - Mayonnaise Of The Day - was crea
 2. Users can see the recipe of the mayonnaise
 3. Users can get what type of dish would go well with their mayonnaise of the day
 
-### What Language is Used?
-**Frontend**
+### What Language/Framework is Used?
 - Next.js with Typescript
-
-**Backend** 
-- Express with Typescript
 - Prisma
 - PostgreSQL<br/>
- 
-=> *backend repository is found [here](https://github.com/sigristarisa/motd-server)*
